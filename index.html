@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная - MyFit</title>
+  <!-- Иконка для стандартных браузеров -->
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="book-trainer.html">Записаться к тренеру</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="traker.html">Трекер здоровья</a>
+            </li>
+            <li class="nav-item mx-auto">
+              <a class="navbar-brand" href="index.html">
+                <img src="assets/Group 1.png" alt="Логотип" class="logo" style="width: 200px; height: 50px;">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content d-flex">
+    <section class="left-side text-center">
+      <div class="container">
+        <h1>Добро пожаловать в Мой Фитнес</h1>
+        <p class="highlight">Начните свой путь к здоровому образу жизни уже сегодня!</p>
+        <a href="traker.html" class="btn btn-primary btn-lg mt-3">
+          Начать тренировку
+        </a>
+      </div>
+    </section>
+    <section class="right-side">
+      <svg 
+        class="curve-line" 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="-100 0 250 500"
+      >
+        <path d="M100 0 C400 200, 500 400, 200 500" />
+      </svg>
+
+      <!-- Изображения -->
+      <img src="assets/medal.png" alt="Картинка 1" class="image">
+      <img src="assets/bottle.png" alt="Картинка 2" class="image">
+      <img src="assets/shoes.png" alt="Картинка 3" class="image" style="height: 400px; width: 380px; right: -5%; top: 10%;">
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const images = document.querySelectorAll('.image');
+
+    function showImagesSequentially() {
+      images.forEach((img, index) => {
+        setTimeout(() => {
+          img.classList.add('visible');
+        }, index * 1000);
+      });
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(showImagesSequentially, 1000);
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content d-flex justify-content-between align-items-center">
+        <p>&copy; 2025 MyFit. Все права защищены.</p>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
+          <a href="terms.html" class="footer-link">Условия использования</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Записаться к тренеру - MyFit</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="book-trainer.html">Записаться к тренеру</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="traker.html">Трекер здоровья</a>
+            </li>
+            <li class="nav-item mx-auto">
+              <a class="navbar-brand" href="index.html">
+                <img src="assets/Group 1.png" alt="Логотип" class="logo" style="width: 200px; height: 50px;">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Главный контент -->
+  <main class="main-content">
+    <div class="container">
+<!-- Фильтры -->
+<section class="filter-section">
+  <h4 class="mb-4">Фильтр тренеров</h4>
+  <form id="filterForm">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label for="cityFilter" class="form-label">Город</label>
+        <select id="cityFilter" class="form-select">
+          <option value="">Все города</option>
+          <option value="Москва">Москва</option>
+          <option value="Екатеринбург">Екатеринбург</option>
+          <option value="Санкт-Петербург">Санкт-Петербург</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="gymFilter" class="form-label">Зал</label>
+        <select id="gymFilter" class="form-select">
+          <option value="">Все залы</option>
+          <option value="Атмосфера">Атмосфера</option>
+          <option value="X-fit">X-fit</option>
+          <option value="Муравей">Муравей</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="specialtyFilter" class="form-label">Специальность</label>
+        <select id="specialtyFilter" class="form-select">
+          <option value="">Все специальности</option>
+          <option value="Бассейн">Бассейн</option>
+          <option value="Йога">Йога</option>
+          <option value="Фитнес">Фитнес</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- Список тренеров -->
+<div id="trainersList">
+  <div class="trainer-card" data-city="Москва" data-gym="Атмосфера" data-specialty="Бассейн">
+    <img src="trainers/1.webp" alt="Фото тренера">
+    <div>
+      <h5>Илья Сергеевич</h5>
+      <p>Город: Москва</p>
+      <p>Зал: Атмосфера</p>
+      <p>Специальность: Бассейн</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Илья Сергеевич')">Записаться</button>
+    </div>
+  </div>
+</div>
+  <!-- Карточка тренера 2 -->
+  <div class="trainer-card" data-city="Москва" data-gym="X-fit" data-specialty="Йога">
+    <img src="trainers/2.jpg" alt="Фото тренера">
+    <div>
+      <h5>Марина Павловна</h5>
+      <p>Город: Москва</p>
+      <p>Зал: X-fit</p>
+      <p>Специальность: Йога</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Марина Павловна')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 3 -->
+  <div class="trainer-card" data-city="Екатеринбург" data-gym="Муравей" data-specialty="Фитнес">
+    <img src="trainers/3.jpg" alt="Фото тренера">
+    <div>
+      <h5>Олег Иванович</h5>
+      <p>Город: Екатеринбург</p>
+      <p>Зал: Муравей</p>
+      <p>Специальность: Фитнес</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Олег Иванович')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 4 -->
+  <div class="trainer-card" data-city="Санкт-Петербург" data-gym="Атмосфера" data-specialty="Бассейн">
+    <img src="trainers/4.jpg" alt="Фото тренера">
+    <div>
+      <h5>Елена Николаевна</h5>
+      <p>Город: Санкт-Петербург</p>
+      <p>Зал: Атмосфера</p>
+      <p>Специальность: Бассейн</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Елена Николаевна')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 5 -->
+  <div class="trainer-card" data-city="Москва" data-gym="Муравей" data-specialty="Йога">
+    <img src="trainers/5.jpg" alt="Фото тренера">
+    <div>
+      <h5>Анастасия Сергеевна</h5>
+      <p>Город: Москва</p>
+      <p>Зал: Муравей</p>
+      <p>Специальность: Йога</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Анастасия Сергеевна')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 6 -->
+  <div class="trainer-card" data-city="Санкт-Петербург" data-gym="X-fit" data-specialty="Фитнес">
+    <img src="trainers/6.webp" alt="Фото тренера">
+    <div>
+      <h5>Дмитрий Павлович</h5>
+      <p>Город: Санкт-Петербург</p>
+      <p>Зал: X-fit</p>
+      <p>Специальность: Фитнес</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Дмитрий Павлович')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 7 -->
+  <div class="trainer-card" data-city="Екатеринбург" data-gym="X-fit" data-specialty="Бассейн">
+    <img src="trainers/7.webp" alt="Фото тренера">
+    <div>
+      <h5>Евгений Николаевич</h5>
+      <p>Город: Екатеринбург</p>
+      <p>Зал: X-fit</p>
+      <p>Специальность: Бассейн</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Евгений Николаевич')">Записаться</button>
+    </div>
+  </div>
+
+  <!-- Карточка тренера 8 -->
+  <div class="trainer-card" data-city="Москва" data-gym="Атмосфера" data-specialty="Фитнес">
+    <img src="trainers/9.webp" alt="Фото тренера">
+    <div>
+      <h5>Ксения Александровна</h5>
+      <p>Город: Москва</p>
+      <p>Зал: Атмосфера</p>
+      <p>Специальность: Фитнес</p>
+      <button class="btn btn-primary" onclick="openBookingModal('Ксения Александровна')">Записаться</button>
+    </div>
+  </div>
+</div>
+  </main>
+  <!-- Модальное окно -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Запись к тренеру</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <div class="mb-3">
+              <label for="availableDates" class="form-label">Выберите дату</label>
+              <select id="availableDates" class="form-select"></select>
+            </div>
+            <div class="mb-3">
+              <label for="availableTimes" class="form-label">Выберите время</label>
+              <select id="availableTimes" class="form-select"></select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" id="confirmBookingButton" onclick="confirmBooking()">Записаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <footer class="footer">
+    <div class="container">
+      <div class="footer-content d-flex justify-content-between align-items-center">
+        <p>&copy; 2025 MyFit. Все права защищены.</p>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
+          <a href="terms.html" class="footer-link">Условия использования</a>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  
+</body>
+</html>

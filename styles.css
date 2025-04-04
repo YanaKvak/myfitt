@@ -1,0 +1,497 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.navbar {
+  background-color: white;
+  padding: 0px;
+}
+
+.nav-link {
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin:  30px;
+  text-align: center;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #1e6ffe;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-right:80px;
+  padding-bottom: 0px;
+}
+
+.main-content {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.left-side {
+  background-color: #fff;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-side h1 {
+  color: #000;
+  font-size: 60px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.left-side .highlight {
+  color: #1e6ffe;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+    /* Стили для анимации полоски */
+    .curve-line {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .curve-line path {
+      stroke: #1e6ffe;
+      stroke-width: 10;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLine 2s ease forwards;
+    }
+
+    @keyframes drawLine {
+      from {
+        stroke-dashoffset: 1000;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .image {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.3s ease;
+    }
+
+    .image.visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* Для картинки "bottle" уменьшаем её размеры */
+    .image:nth-child(3) {
+      top: 10%;
+      left: -4%;
+      transform: translate(1000, 50px);
+      height: 260px; /* Уменьшаем размер */
+      width: 200px;  /* Уменьшаем размер */
+    }
+
+    /* Для картинки "medal" увеличиваем её и поднимаем/сдвигаем */
+    .image:nth-child(2) {
+      top: 60%;  /* Поднимем немного выше */
+      left: 35%;
+      transform: translate(1000, 50px);   /* Сдвигаем немного влево */
+      height: 190px;  /* Увеличиваем размер */
+      width: 192px;   /* Увеличиваем размер */
+    }
+
+.footer {
+  background-color: #fff;
+  padding: 20px;
+  color: #625C58;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display:flexbox;
+  margin-top: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 150px;
+}
+
+.footer-link {
+  color: #625C58;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.section-header {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.section-header h1 {
+  font-size: 60px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form-container {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 600px;
+  margin-left: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom:30px;
+}
+
+.form-label {
+  color: #007BFF;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  background-color: #E0E0E0;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.submit-btn-contact {
+  background-color: #1e6ffe;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.main-content-about {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.about-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.block {
+  background-color: #F9F7F7;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.block:nth-child(1),
+.block:nth-child(3) {
+  background-color: #F9F7F7;
+}
+
+.block:nth-child(2),
+.block:nth-child(4) {
+  background-color: #fff;
+}
+
+.block:nth-child(1) {
+  height: 540px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.block:nth-child(2) {
+  height: 540px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.block:nth-child(3) {
+  height: 540px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.block:nth-child(4) {
+  height: 540px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.about-container h6 {
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.block h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.block p {
+  color: #333;
+  line-height: 1.5;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.block p span {
+  font-weight: bold;
+  color: #1e6ffe;
+}
+
+.white-text {
+  color: white;
+}
+
+.main-content-contact {
+  display: flex;
+  height: 100vh;
+  color: #fff;
+}
+
+.left-side-contact {
+  background-color: #fff;
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  justify-content: center;
+}
+
+.left-side-contact h2 {
+  font-size: 32px;
+  font-weight: 100;
+  margin-left: 30px;
+  color: #000;
+}
+
+.right-side-contact {
+  background-color: #fff;
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-block {
+  margin-bottom: 40px;
+  padding: 10px;
+  color: #fff;
+}
+
+.block1 {
+  background-color: #1e6ffe;
+  width: 500px;
+  border-radius: 26px;
+  height: 200px;
+  text-align: justify;
+  padding: 27px;
+  margin-left: 60px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  font-size: 18px;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+}
+
+.block2 {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 26px;
+  margin-right: 90px;
+  margin-left: 30px;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+}
+
+.block2 ul {
+  list-style-type: disc;
+  padding-left: 39px;
+}
+
+.block2 li {
+  margin-bottom: 5px;
+}
+
+.block3 {
+  background-color: #1e6ffe;
+  border-radius: 26px;
+  margin-left: 150px;
+  margin-right: 120px;
+  font-size: 17px;
+  text-align: justify;
+  padding: 20px;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+}
+
+.workout-video {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.workout-description {
+  margin-top: 20px;
+}
+
+.workout-points {
+  margin-top: 20px;
+}
+
+.workout-actions button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.progress {
+  height: 20px;
+}
+.reward-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reward-card h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
+}
+.promo-code {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e6ffe;
+  margin-top: 20px;
+}
+  .custom-btn {
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .custom-btn:hover {
+    background-color: #f5f5f5;
+    color: #000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-btn:active {
+    background-color: #e0e0e0;
+  }
+  .trainer-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Убедитесь, что содержимое выравнивается по левому краю */
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Позволяет карточкам сжиматься, если пространство ограничено */
+  }
+  
+  .trainer-card div {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column; /* Все элементы в карточке выравниваются по вертикали */
+  }
+  
+  .trainer-card img {
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .trainer-card button {
+    margin-top: 10px;
+    align-self: flex-start; /* Кнопка останется на том же уровне, что и другие элементы */
+  }
+  
+  /* Стили для фильтров */
+  .filter-section {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  
+  .filter-section form {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Поддержка для уменьшения размера фильтров на мобильных устройствах */
+  }
+  
+  .filter-section .form-select {
+    width: 100%; /* Сделает селект-боксы гибкими */
+    max-width: 250px;
+  }
+  
